@@ -1,0 +1,14 @@
+#spring-cloud-config 结合 git仓库配置
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Yamhto/spring-cloud-config-server.git
+          search-paths: /config
+          username: Yamhto
+          password: yangming023310
+      label: master
+      profile: dev

@@ -1,0 +1,41 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: cloud-user-consumer-openfeign
+
+#注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka01:8001/eureka/,http://eureka02:8002/eureka/,http://eureka03:8003/eureka/
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000  # 指定Feign客户端连接提供者的超时时限   取决于网络环境
+        readTimeout: 5000   # 指定Feign客户端从请求到获取到提供者给出的响应的超时时限  取决于业务逻辑运算时间
+  hystrix:
+    enabled: true
+#  compression:
+#    request:
+#      enabled: true   # 开启对请求的压缩
+#      mime-types: text/xml, application/xml
+#      min-request-size: 2048   # 指定启用压缩的最小文件大小
+#    response:
+#      enabled: true   # 开启对响应的压缩
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+
+#配置feign的日志等级
+logging:
+  level:
+    com.yamhto.cloud.openfeign.consumer.service: debug
+

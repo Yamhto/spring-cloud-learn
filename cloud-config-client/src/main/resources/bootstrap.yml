@@ -1,0 +1,9 @@
+#spring-cloud-config 结合 git仓库配置
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:6001/
+      label: master
+      profile: dev

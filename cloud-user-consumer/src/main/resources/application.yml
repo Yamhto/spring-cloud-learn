@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: cloud-user-consumer
+
+#注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka01:8001/eureka/,http://eureka02:8002/eureka/,http://eureka03:8003/eureka/
