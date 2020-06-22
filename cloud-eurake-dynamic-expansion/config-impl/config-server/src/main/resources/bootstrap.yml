@@ -1,0 +1,20 @@
+spring:
+  application:
+    ####注册中心应用名称
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          ###git环境地址
+          uri: https://github.com/Yamhto/spring-cloud-config-server.git
+          ####搜索目录
+          search-paths:
+            - eurekaDynamicExpansion
+          username: Yamhto
+          password: yangming023310
+      ####读取分支
+      label: master
+####端口号
+server:
+  port: 8200

@@ -21,6 +21,7 @@
         <module>../cloud-gateway</module>
         <module>../cloud-config-server</module>
         <module>../cloud-config-client</module>
+        <module>../cloud-eurake-dynamic-expansion</module>
     </modules>
 
     <parent>
